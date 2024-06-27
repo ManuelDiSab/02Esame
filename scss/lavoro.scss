@@ -1,0 +1,52 @@
+@import "variabili";
+    
+
+.main {/*di seguito le impostazioni grafiche del CONTENUTO PRINCIPALE della pagina*/
+    padding:30px;
+    display: flex;
+    flex-wrap: wrap;
+    @media(max-width:768px){//RESPONSIVENESS DEL CONTENITORE PRINCIPLAE
+        overflow: hidden;
+        margin-top:0px;
+    }
+}
+h1{
+    text-align: center;
+    padding: 35px;
+    font-size:45px;
+    @media(max-width:768px){//RESPONSIVENESS DEL TITOLO
+        overflow: hidden;
+        padding-top: 100px;
+    }
+}
+.lavoro{
+    display: flex;
+    padding-top: 30px;
+    margin-bottom: 50px;
+    @media(max-width:768px){//RESPONSIVENESS DI .lavoro
+        min-height: 280px;
+        overflow: hidden;
+        display:contents;
+        width: 100%;
+    }
+    .colonna{
+        text-align: justify;
+        padding : 50px;
+        
+        p, a{
+        text-decoration: none;
+        font-size: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    }
+    img{
+        overflow: hidden;
+        border-radius: 25px;
+        width: 100%;        
+    }
+}
+
+
+
+
+

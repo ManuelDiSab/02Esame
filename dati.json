@@ -1,0 +1,50 @@
+{
+    "favicon":"IMG/favicon-16x16.png",
+    "index":{
+        "paragrafo":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aliquam harum autem esse ad saepe providen tnumquam asperiores ut iusto laudantium doloremque deserunt, expedita commodi itaque error rerum aperiam reprehenderit.",
+        "title":"Manuel",
+        "url":"index.php",
+        "h2":"Pagina Iniziale",
+        "img":"IMG/compu.jpg"
+    },
+    "chi_sono":{
+        "url":"chi_sono.php",
+        "title":"Chi sono",
+        "paragrafo":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aliquam harum autem esse ad saepe providen tnumquam asperiores ut iusto laudantium doloremque deserunt, expedita commodi itaque error rerum aperiam reprehenderitLorem ipsum dolor sit amet consectetur adipisicing elit. Totam aliquam harum autem esse ad saepe providen tnumquam asperiores ut iusto laudantium doloremque deserunt, expedita commodi itaque error rerum aperiam reprehenderit",
+        "titolo1":"Su di me",
+        "titolo2":"Le mie competenze",
+        "img1":"IMG/persona-al-computer.jpg",
+        "img2":"IMG/codice_dev.jpg"
+
+
+    },
+    "lavoro":{
+        "url":"lavoro.php",
+        "paragrafo":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aliquam harum autem esse ad saepe providen tnumquam asperiores ut iusto laudantium doloremque deserunt, expedita commodi itaque error rerum aperiam reprehenderit.",
+        "title":"Lavoro",
+        "img":"IMG/web-developer.jpeg",
+        "titolo":"Lavoro n°x",
+        "titolo2":"Descrizione"
+    },
+    "servizi":{
+        "url":"servizi.php",
+        "paragrafo":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aliquam harum autem esse ad saepe providen tnumquam asperiores ut iusto laudantium doloremque deserunt, expedita commodi itaque error rerum aperiam reprehenderit.",
+        "title":"Servizi offerti",
+        "titolo":"Tipologie di servizi",
+        "titolo2":"Trovami sui miei social",
+        "img":"IMG/laptop.png",
+        "social":{
+            "1":"facebook",
+            "2":"instagram",
+            "3":"Git-hub",
+            "4":"Discord"
+        }
+
+    },
+    "contact":{
+        "url":"contact.php",
+        "title":"contattami",
+        "FormHead":"Compila il form per saperne di più"
+    }
+
+}

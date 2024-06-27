@@ -1,0 +1,202 @@
+@import "variabili";
+
+@mixin menu{//IMPOSTAIZONI GRAFICHE DEL MENU DEL SITO
+     
+     div.navbar{//#######     IMPOSTAZIONI GRAFICHE DELLA BARRA DI NAVIGAZIONE ##################
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 30px 10%;
+        @if $template==light{   //TEMPLATE DI TIPO CHIARO
+            background-color:white;
+        }
+        @else{   // TEMPLATE DI TIPO SCURO
+            background-color: $bgMenuDark;
+
+        }
+        border-bottom: $MenuC solid 2px;
+        #controllo{//MENU AD HAMBURGER NON VISIBILE CON SITO DESKTOP
+            opacity: 0;
+        }
+        ul{
+            list-style-type: none;
+            li{
+                display: inline-block;
+                padding: 20px;
+                a{
+                    transition: 300ms all ease;
+                    &:hover{     // CAMBIO DEL COLORE DEGLI ELEMENTI DELLA NAVBAR AL PASSAGGIO DEL CURSORE
+                            color: olive;
+                            }
+                }
+            }
+        }
+         .menu,.menu a, #button{
+            font-size: 14px; 
+            font-weight: 300;
+            text-decoration: none;
+            @if $template==light{ // TEMPLATE DI TIPO CHIARO
+                color:$MenuC;
+            }
+            @else{ //TEMPLATE DI TIPO SCURO
+                color:$MenuC;
+            }
+         }
+        .logo{
+                margin-right: auto;
+            }
+            #button{ //### BOTTONE DEL CONTATTO ##############
+                padding: 15px 40px;
+                background-color: $MenuC;
+                border-radius: 50px;
+                color: aliceblue;
+                cursor: pointer;
+                border: none;
+                text-decoration: none;
+                transition: 300ms all ease;
+                &:hover{
+                        background-color: olive;
+                    }
+                    @media (max-width: 768px){ //RESPONSIVENESS DEL BUTTON                  
+                            padding:0;
+                            @if $template==light{
+                                color:$MenuC;
+                                background-color: $bgMenu;
+                                &:hover{
+                                    color: olive;
+                                    background-color:$bgMenu ;
+                                }
+                            }
+                            @else{
+                                color:$MenuC;
+                                background-color: $bgMenuDark;
+                                &:hover{
+                                    color: olive;
+                                    background-color:$bgMenuDark;
+                                }
+                            }
+                        
+                    }
+                    }
+            }    
+    }
+    
+    @media all and (max-width: 768px) { //   RESPONSIVENESS CON DISPOSITIVI CON LARGHEZZA MASSIMA DELLO SCHERMO DI 768px
+        .logo {
+            position: absolute;
+            right: 30px;
+        }
+        .navbar{
+            position: fixed;
+            width: 100%;
+            height: 10%;
+            z-index: 1  ;
+        }
+        .label-controllo{// CREAZIONE DEL MENU AD HAMBURGER  #########################
+            position: fixed;
+            top:30px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1;
+            span,span::before,span::after{
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                background-color: $MenuC;
+                transition-duration: 0.3s;
+            }
+            span::before{
+                content: '';
+                top: -8px;
+            }
+            span::after{
+                content: '';
+                top: 8px;
+            }
+        }
+        .menu{
+            display: block;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 40%;
+            height: 100%;
+            padding: 80px 0;
+            transition-duration: 0.2s;
+            @if $template == light{
+                background-color: $bgMenu;
+                color: $MenuC;
+            }
+            @else
+            {
+                background-color: $bgMenuDark;
+                color:$MenuC;
+            }
+            .menu li{
+                display: block;
+                padding: 14px 26px;
+                font-size: 1.5rem;
+                font-weight: 600;
+                transition-duration: 0.2s;
+                margin-left:0px; 
+            }
+        }
+        .navbar{
+            #controllo:checked + .label-controllo>span{
+                transform: rotate(45deg);
+            }
+            #controllo:checked + .label-controllo>span::before{
+                transform: rotate(0deg);
+                top: 0;
+            }
+            #controllo:checked + .label-controllo>span::after{
+                transform: rotate(90deg);
+                top: 0;
+            }
+            #controllo:checked~.menu{
+                left: 0 !important;
+            }
+        }
+
+    }//###############   FINE MENU AD HAMBURGER    ###############################
+
+
+
+//  IMPOSTAZIONI GRAFICHE DEL FOOTER DELLA PAGINA 
+@mixin footer{
+    .foot a:hover{
+        @if $template==light{ //TEMPLATE DI TIPO CHIARO 
+            color: rgb(57, 56, 56);
+        }
+        @else{ // TEMPLATE DI TIPO SCURO
+            color:white;
+        }
+    }
+     footer{
+        .foot a, .foot p{
+            text-decoration: none;
+            @if $template==light{  // TEMPLATE DI TIPO CHIARO
+                color: $footerC;
+            }
+            @else{  // TEMPLATE DI TIPO SCURO
+                color: $footerC;
+            }
+        }
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        @if $template==light{ // TEMPLATE DI TIPO CHIARO
+            background-color:$footerbg;
+            border-top: 2px solid #c8b614;
+        }
+        @else{  // TEMPLATE DI TIPO SCURO
+            background-color: $footerbgDark;
+            border-top: 2px solid #d8c40b57;
+        }
+     }
+     
+}

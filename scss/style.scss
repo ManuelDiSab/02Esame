@@ -1,0 +1,40 @@
+@import "variabili";
+@import "mixin";
+
+@include menu;
+@include footer;
+
+
+@if $template == light {//TEMPLATE DI TIPO CHIARO 
+    body{
+        background-color: $Bodyc;
+
+        h1,h2{
+            color: $HColor;
+        }
+        p, li{
+            color: $Pcolor;
+        }
+    }
+}
+@else{//TEMPLATE DI TIPO SCURO 
+    body{
+        background-color: $BodycDark;
+
+        h2,h1{
+            color: $HColorDark;
+        }
+        li, p{
+            color: $PcolorDark;
+        }
+    }
+}
+
+
+*{  //IMPOSTAZIONI GRAFICHE GENERALI
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    
+}
