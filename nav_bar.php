@@ -6,7 +6,7 @@ $str_json = json_decode(UT::leggiTesto($file));
 ?>
 <header>
         <div class="navbar"><!-- ####### INIZIO DEL MENU DI NAVIGAZIONE ############################################-->
-            <input type="checkbox" id="controllo"/>
+            <input type="checkbox" id="controllo">
             <label for="controllo" class="label-controllo">
                 <span></span>
             </label>

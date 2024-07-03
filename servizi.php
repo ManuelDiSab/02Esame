@@ -27,12 +27,11 @@ $str_json = json_decode(UT::leggiTesto($file));
         <ul>
         <?php 
         for($i=0;$i<2;$i++)// CREO CON IL CICLO FOR 2 ELEMENTI DI UNA LISTA
-        echo "<li> <h3>Servizio</h3>" . "<br>" . $str_json->servizi->paragrafo ."</li><br><br>"; ?>
+        echo "<li> <h3>Servizio</h3>" . "<br>" . $str_json->servizi->paragrafo ."</li>"; ?>
         </ul>
         <button>SCARICA IL  PDF</button><!-- ### IPOTETICO BUTTON PER SCARICARE UN PDF CHE AL MOMENTO NON ESISTE###################-->
     </div>
     </div>
-</div>
 <?php 
     require("footer.php");  //### FOOTER DELLA PAGINA ###################
 ?>

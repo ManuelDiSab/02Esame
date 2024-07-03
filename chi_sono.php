@@ -27,12 +27,12 @@ $str_json = json_decode(UT::leggiTesto($file));
             <p><?php echo $str_json->chi_sono->paragrafo; ?></p>
         </div>
         <div class="img">
-            <img src="<?php echo $str_json->chi_sono->img1; ?>" alt="web developer" id="img1" height="450px" width="600px">
+            <img src="<?php echo $str_json->chi_sono->img1; ?>" alt="web developer" id="img1" height="450" width="600">
         </div>
     </div>
 
     <div class="container2"><!--### SECONDA PARTE ########################-->
-         <img src="<?php echo $str_json->chi_sono->img2; ?>" alt="codice html" id="img2" height="600px" width="850px">
+         <img src="<?php echo $str_json->chi_sono->img2; ?>" alt="codice html" id="img2" height="600" width="850">
         <div class="content2">
             <h2><?php echo $str_json->chi_sono->titolo2; ?> </h2>
             <p><?php echo $str_json->chi_sono->paragrafo; ?></p>

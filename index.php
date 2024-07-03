@@ -31,7 +31,6 @@ $str_json = json_decode(UT::leggiTesto($file));
                 </div>
             </div><!-- ###  FINE GRIGLIA  ########-->
         </div><!--  ############# FINE DEL PRIMO CONTENUTO  #############################-->
-        <h2></h2>
     <h2 id="title2">ESEMPIO DI LAVORI SVOLTI</h2>
         <div class="secondo-contenitore"><!--  #### INIZIO CONTENUTO SECONDARIO  ###############-->
 <!--########## CREAZIONE COL CICLO FOR DI 3 CARD CONTENENTI DELLE SIMULAZIONI DI LAVORI  #################-->

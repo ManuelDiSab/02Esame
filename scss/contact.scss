@@ -52,7 +52,7 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
                     margin: 5px 0;
                 }
 
-                input{
+                input, textarea{
                     height: 40px;
                     width: 95%;
                     padding: 0 10px;
@@ -60,11 +60,6 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
                     border: 1px solid black;
                     outline: none;
                 }
-            }
-
-            textarea{
-                width: 98%;
-                height: 50px;
             }
         }
 

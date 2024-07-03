@@ -14,7 +14,7 @@ $inviato = ($inviato == null || $inviato != 1 ) ? false:true;
     $telefono= UT::richiestaHTTP("telefono");
     $testo= UT::richiestaHTTP("testo");
 
-    $clsErrore = 'class="errore" ';
+    $clsErrore = 'class="errore"';
 
   //FACCIO LA VALIDAZIONE DEI DATI RECUPERATI DAL FORM UTILIZZANDO LO STESSO METODO DEGLI ESERCIZI DI PHP
   if(($nome!= "" )  && (strlen("nome") <= 25))
@@ -100,7 +100,12 @@ else{
     <title>  <?php echo $str_json->contact->title;    ?></title>
     <link rel="icon" type="image/x-icon" href="<?php echo $str_json->favicon;?>">  <!--## FAVICON DEL SITO ##########-->
     <link rel="stylesheet"  href="css/style.min.css" type="text/css">
-    <link rel="stylesheet"  href="css/contact.min.css" type="text/css">      
+    <link rel="stylesheet"  href="css/contact.min.css" type="text/css">   
+    <style>
+        .errore{
+        color: red;
+    }
+    </style>   
 </head>
 <body>
  <?php 
@@ -120,18 +125,18 @@ else{
                         </div>
                         <div class="inputbox">
                             <label for="cognome" <?php echo $clsErroreCognome; ?>>Cognome <span>*</span></label>
-                            <input type="text" placeholder="cognome" name="cognome" id="cognome" required maxlength="25"required value="<?php echo $cognome; ?>">
+                            <input type="text" placeholder="cognome" name="cognome" id="cognome" required maxlength="25" value="<?php echo $cognome; ?>">
                         </div>
                         <div class="inputbox">
                             <label for="email" <?php echo $clsErroreEmail; ?>>Email <span>*</span></label>
-                            <input type="email" placeholder="E-mail" name="email" id="email" required required maxlength="100" minlength="10" value=" <?php echo $email; ?>">
+                            <input type="email" placeholder="E-mail" name="email" id="email" required maxlength="100" minlength="10" value=" <?php echo $email; ?>">
                         </div>
                         <div class="inputbox">
                             <label for="telefono" <?php echo $clsErroreTelefono; ?>>Telefono <span>*</span></label>
                             <input type="tel" placeholder="Telefono" name="telefono" id="telefono" required minlength="5" maxlength="20"  value=" <?php echo $telefono; ?>">
                         </div>
                         <label for="testo" <?php echo $clsErroreTesto; ?>>Testo <span>*</span></label>
-                        <textarea name="testo" id="testo" placeholder="Dimmi qualcosa su di te" required maxlenght="500"  value=" <?php echo $testo; ?>"></textarea>
+                        <textarea name="testo" id="testo" placeholder="Dimmi qualcosa su di te" required ></textarea>
 
 
                     </div>
