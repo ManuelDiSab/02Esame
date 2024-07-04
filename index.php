@@ -35,14 +35,20 @@ $str_json = json_decode(UT::leggiTesto($file));
         <div class="secondo-contenitore"><!--  #### INIZIO CONTENUTO SECONDARIO  ###############-->
 <!--########## CREAZIONE COL CICLO FOR DI 3 CARD CONTENENTI DELLE SIMULAZIONI DI LAVORI  #################-->
          <?php
-                for($i=0; $i<=2; $i++)
-                {
-                    echo
-            '<div class="card">
-                    <a href="lavoro.php" title=" Vai al lavoro_n°x">Questo è il lavoro che ho fatto per ... e riguardava ...
-                    <div class="img"><img src="IMG/webdev.jpg" alt=""></div></a>
-                </div>';
-                }
+         $i=0;// INIZIALIZZO IL CONTATORE
+                foreach($str_json->lavoro->contenuto as $arr){
+                     
+                    $array = get_object_vars($arr);
+                    if($i== 3){//VOGLIO SOLO VISUALIZZARE I PRIMI 3 LAVORI
+                        break;
+                    }
+                    printf(
+                   '<div class="card">
+                           <a href="lavoro.php?selezionato=%u" title="%s">Questo è il lavoro che ho fatto per ... e riguardava ...
+                           <div class="img"><img src="IMG/webdev.jpg" alt=""></div></a>
+                       </div>', $array["id"], $array["titolo"]) ;
+                       $i++;
+                    }
                     ?>
             </div>  <!--  #### FINE CONTENUTO SECONDARIO  ###############-->
     <?php 

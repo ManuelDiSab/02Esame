@@ -37,25 +37,22 @@ $str_json = json_decode(UT::leggiTesto($file));
             <h2><?php echo $str_json->chi_sono->titolo2; ?> </h2>
             <p><?php echo $str_json->chi_sono->paragrafo; ?></p>
         </div>
-        
-    
-
 </div>
-<h1>I MIEI LAVORI</h1>
+<h1>PORTFOLIO</h1>
         
         <div class="lavori"><!-- #####   INIZIO DEL CONTENUTI DEI LAVORI   #############################-->
 
 <!--########## CREAZIONE COL CICLO FOR DI 6 CARD CONTENENTI DELLE SIMULAZIONI DI LAVORI  #################--> 
         <?php
-        for($i=0; $i<=5; $i++){  echo 
+        foreach($str_json->lavoro->contenuto as $arr){ 
+            $array = get_object_vars($arr);
+            printf(
            '<div class="card">
-                   <a href="lavoro.php" title="Vai al lavoro_n°x">Questo è il lavoro che ho fatto per ... e riguardava ...
+                   <a href="lavoro.php?selezionato=%u" title="%s">Questo è il lavoro che ho fatto per ... e riguardava ...
                    <div class="img"><img src="IMG/webdev.jpg" alt=""></div></a>
-               </div>';
+               </div>', $array["id"], $array["titolo"]) ;
             }
-            ?>
-
-               
+            ?> 
            </div><!-- #####   FINE DEL CONTENUTI DEI LAVORI   ########################-->
 </div>
 <?php 

@@ -136,7 +136,7 @@ else{
                             <input type="tel" placeholder="Telefono" name="telefono" id="telefono" required minlength="5" maxlength="20"  value=" <?php echo $telefono; ?>">
                         </div>
                         <label for="testo" <?php echo $clsErroreTesto; ?>>Testo <span>*</span></label>
-                        <textarea name="testo" id="testo" placeholder="Dimmi qualcosa su di te" required ></textarea>
+                        <textarea name="testo" id="testo" placeholder="Dimmi qualcosa su di te" required></textarea>
 
 
                     </div>
