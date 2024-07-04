@@ -63,9 +63,7 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
                     width: 98%;
                     height: 50px;
                 }
-        
             }
-        
 
         .button-container{
                 button{
@@ -83,9 +81,7 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
         }
     }
 }
-.contatti{
-    display: flex;
-}
+
 @media(max-width:768px){ //RESPONSIVENESS DEL SITO   #####################
 .container{
    min-height: 280px;

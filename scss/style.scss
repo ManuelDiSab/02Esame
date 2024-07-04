@@ -30,7 +30,40 @@
     }
 }
 
+.card {
+    /* ############   GRAFICA DELLE CARD   ###########################*/
+    display: block;
+    border: 30px;
+    padding: 30px;
+    border: #b9a80d solid 1px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    margin: 30px;
+    width: 25%;
 
+    @media(max-width:768px){ // ##### RESPONSIVENESS DELLE CARD  ################
+        overflow: hidden;
+    }
+
+    &:hover {
+       transform: scale(1.1);
+       transition: 0.6s;
+    }
+
+    img {
+        padding:0px;
+        margin: 5px;
+
+        @media(max-width:768px) {// ##### RESPONSIVENESS DELL'IMMAGINE  ################
+                display: none;
+        }
+    }
+    a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: none;
+        color: rgb(60, 62, 63);
+    }
+}
 *{  //IMPOSTAZIONI GRAFICHE GENERALI
     box-sizing: border-box;
     margin: 0;
