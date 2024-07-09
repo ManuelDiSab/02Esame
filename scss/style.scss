@@ -43,6 +43,9 @@
 
     @media(max-width:768px){ // ##### RESPONSIVENESS DELLE CARD  ################
         overflow: hidden;
+        padding: 10px;
+        width: 50%;
+        text-align: center;
     }
 
     &:hover {
@@ -55,10 +58,10 @@
         margin: 5px;
 
         @media(max-width:768px) {// ##### RESPONSIVENESS DELL'IMMAGINE  ################
-                display: none;
+            display: none;
         }
     }
-    a {
+    a { 
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-decoration: none;
         color: rgb(60, 62, 63);
@@ -66,8 +69,7 @@
 }
 *{  //IMPOSTAZIONI GRAFICHE GENERALI
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     line-height: 1.6;
-    
 }

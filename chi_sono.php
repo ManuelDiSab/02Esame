@@ -48,7 +48,8 @@ $str_json = json_decode(UT::leggiTesto($file));
             $array = get_object_vars($arr);
             printf(
            '<div class="card">
-                   <a href="lavoro.php?selezionato=%u" title="%s">Questo è il lavoro che ho fatto per ... e riguardava ...
+                   <a href="lavoro.php?selezionato=%u" title="%s">Lavoro di tipo... svolto per...
+                           <br>clicca per saperne di più
                    <div class="img"><img src="IMG/webdev.jpg" alt=""></div></a>
                </div>', $array["id"], $array["titolo"]) ;
             }

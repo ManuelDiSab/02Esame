@@ -43,11 +43,8 @@
             width: 95%;
 
             @media(max-width:768px) {  //  RESPONSIVENESS
-                    height: 450px;
-                    margin-left: 15px;
-                    margin-bottom: 25px;
-
-                }
+                display: none;
+            }
 
         }
         h2 {

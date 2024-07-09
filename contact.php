@@ -114,6 +114,7 @@ else{
 
 
     if(!$inviato){?>
+
         <main>
         <div class="container">
             <form action="contact.php?inviato=1" method="POST" novalidate   ><!--#####   INIZIO DEL FORM   ##########################-->
@@ -136,7 +137,8 @@ else{
                             <input type="tel" placeholder="Telefono" name="telefono" id="telefono" required minlength="5" maxlength="20"  value=" <?php echo $telefono; ?>">
                         </div>
                         <label for="testo" <?php echo $clsErroreTesto; ?>>Testo <span>*</span></label>
-                        <textarea name="testo" id="testo" placeholder="Dimmi qualcosa su di te" required></textarea>
+                        <textarea name="testo" id="testo" placeholder="Dimmi qualcosa su di te" required><?php echo $testo;?></textarea>
+                        <!-- LA TEXTAREA NON AMMETTE L'ATTRIBUTO VALUE QUINDI PER RISOLVERE IL PROBLEMA HO INSERITO $testo tra IL TAG DI APERTURA E CHIUSURA-->
 
 
                     </div>

@@ -12,7 +12,6 @@ $str_json = json_decode(UT::leggiTesto($file));
             </label>
             <a class="logo" href="<?php echo $str_json->index->url;?>"><img src="IMG/MANUEL.png"  alt="logo" title="logo" width="150"></a>
             <ul class="menu">
-                    <!-- SE LA FLAG E' TRUE ALLORA AL CLICCARE SI TONERA' ALL' INIZIO DELLA PAGINA ALTRIMENTI SI APRIRA' UNA NUOVA PAGINA  -->
                     <li><a href="<?php echo $str_json->index->url;?>" target="_self">HOME PAGE</a></li>
                     <li><a href="<?php echo $str_json->chi_sono->url;?>" target="_self">CHI SONO</a></li>
                     <li><a href="<?php echo $str_json->servizi->url;?>" target="_self">SERVIZI OFFERTI</a></li>
