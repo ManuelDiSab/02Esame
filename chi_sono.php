@@ -38,7 +38,7 @@ $str_json = json_decode(UT::leggiTesto($file));
             <p><?php echo $str_json->chi_sono->paragrafo; ?></p>
         </div>
 </div>
-<h1>PORTFOLIO</h1>
+<h1>I MIEI LAVORI</h1>
         
         <div class="lavori"><!-- #####   INIZIO DEL CONTENUTI DEI LAVORI   #############################-->
 

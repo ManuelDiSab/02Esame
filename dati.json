@@ -71,12 +71,16 @@
         "url":"servizi.php",
         "paragrafo":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aliquam harum autem esse ad saepe providen tnumquam asperiores ut iusto laudantium doloremque deserunt, expedita commodi itaque error rerum aperiam reprehenderit.",
         "title":"Servizi offerti",
-        "titolo":"Tipologie di servizi",
+        "titolo":"Servizi offerti",
         "titolo2":"Trovami sui miei social",
         "img":"IMG/laptop.png",
+        "serviziOfferti":{
+            "1":"Sviluppo web",
+            "2":"Web Design"
+        },
         "social":{
-            "1":"facebook",
-            "2":"instagram",
+            "1":"Facebook",
+            "2":"Instagram",
             "3":"Git-hub",
             "4":"Discord"
         }

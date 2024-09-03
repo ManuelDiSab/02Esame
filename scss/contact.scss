@@ -4,14 +4,10 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    
-    
-    
     .container{// GRAFICA DEL CONATINER DEL FORM ###############
         max-width: 650px;
         padding: 28px;
-        margin: 0 28px;
+        margin: 50px 28px;
         border-radius: 10px;
         overflow: hidden;
         @if $template == light{  //TEMPLATE DI TIPO CHIARO 
@@ -21,10 +17,8 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
         }
         @else{//TEMPLATE DI TIPO SCURO 
             background: rgb(228, 223, 223);
-            border: 1px solid $HColor;
-            
+            border: 1px solid $HColor;   
         }
-        
             h2{
             font-size: 30px;
             font-weight: 700;
