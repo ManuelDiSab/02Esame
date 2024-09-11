@@ -20,9 +20,10 @@ h1{
     }
 }
 .lavoro{
-    display: flex;
+    display:flex;
     padding-top: 30px;
     margin-bottom: 50px;
+    width: 100%;
     @media(max-width:768px){//RESPONSIVENESS DI .lavoro
         min-height: 280px;
         overflow: hidden;
@@ -32,6 +33,11 @@ h1{
     .colonna{
         text-align: justify;
         padding : 50px;
+        width: 50%;
+        @media(max-width:768px){//RESPONSIVENESS DI .lavoro
+            padding: 0px;
+            width: 100%;
+        }
         
         p, a{
         text-decoration: none;
@@ -42,7 +48,12 @@ h1{
     img{
         overflow: hidden;
         border-radius: 25px;
-        width: 100%;        
+        width:600px;
+        height: 450px;    
+        @media(max-width:768px){//RESPONSIVENESS DELL'IMG
+            height: 200px;
+            width: 250px;
+        }    
     }
 }
 

@@ -1,16 +1,26 @@
 <?php 
  require_once("utility.php"); // file contenente alcune funzioni utili
+ require_once("connessione.php"); // File con le connessioni alla base dati
  use MieClassi\Utility as UT;
-$file = "dati.json"; //file json da cui prendere i dati 
-$str_json = json_decode(UT::leggiTesto($file));  
+    $sql = "SELECT servizi.Titolo, servizi.Servizio FROM servizi";
+    $query = $mysqli->query($sql);
+    if ($query->num_rows > 0) {
+        while($righe = $query->fetch_array(MYSQLI_ASSOC)){
+            $tmp = array(
+                "Servizio" => $righe["Servizio"],
+                "Titolo"=> $righe["Titolo"]
+            );
+            $dati[] = $tmp;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $str_json->servizi->title;?></title>
-    <link rel="icon" type="image/x-icon" href="<?php echo $str_json->favicon;?>">
+    <title>Servizi</title>
+    <link rel="icon" type="image/x-icon" href="IMG/faviconSito.png">
     <link rel="stylesheet"  href="css/style.min.css" type="text/css">
     <link rel="stylesheet"  href="css/servizi.min.css" type="text/css">   
 </head>
@@ -20,14 +30,14 @@ $str_json = json_decode(UT::leggiTesto($file));
 ?>            
 <div class="contenuto"><!-- #######  INIZIO DEL CONTENUTO DELLA PAGINA ####################-->
     <div class="colonna1"><!-- ####### COLONNA DI SINISTRA ####################-->
-        <img src="<?php echo $str_json->servizi->img;?>" alt="laptop computer">
+        <img src="IMG/laptop.png" alt="laptop computer">
     </div>
     <div class="colonna2"><!-- ####### COLONNA DI DESTRA ####################-->
-        <h1><?php echo $str_json->servizi->titolo;?></h1>
+        <h1>Servizi Offerti</h1>
         <ul>
         <?php 
-        for($i=1;$i<3;$i++)// CREO CON IL CICLO FOR 2 ELEMENTI DI UNA LISTA
-        echo "<li> <h3>" .$str_json->servizi->serviziOfferti->$i . "</h3>" . "<br>" . $str_json->servizi->paragrafo ."</li>"; ?>
+            echo UT::Creaservizio($dati);    
+        ?>
         </ul>
         <button>SCARICA IL  PDF</button><!-- ### IPOTETICO BUTTON PER SCARICARE UN PDF CHE AL MOMENTO NON ESISTE###################-->
     </div>

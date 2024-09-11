@@ -1,16 +1,36 @@
 <?php 
 require_once("utility.php"); // file contenente alcune funzioni utili
+require_once("connessione.php"); // file per le connessioni al database
 use MieClassi\Utility as UT;
-$file = "dati.json"; //file json da cui prendere i dati 
-$str_json = json_decode(UT::leggiTesto($file));  
+$FolderPath = "ImgLavori/";//percorso della cartella delle immagini dei lavori
+    $sql = "SELECT lavori.idLavoro, lavori.ImagePath, lavori.descrizione, lavori.titolo FROM lavori";
+    $query = $mysqli->query($sql);
+    if ($query->num_rows> 0) {
+        while ($righe = mysqli_fetch_array($query)) {
+            $tmp = array(
+                "idLavoro" => $righe["idLavoro"],
+                "ImagePath" => $righe["ImagePath"],
+                "descrizione" => $righe["descrizione"],
+                "titolo"=> $righe["titolo"]
+                
+            );
+            $dati[] = $tmp;
+        }
+    }
+
+    $sql = "SELECT homepage.ImagePath, homepage.Titolo, homepage.Contenuto FROM homepage"; 
+    $query = $mysqli->query($sql);
+    if($query->num_rows > 0) {
+        $righe = $query->fetch_array(MYSQLI_ASSOC);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $str_json->index->title;?></title>
-    <link rel="icon" type="image/x-icon" href="<?php echo $str_json->favicon;?>">
+    <title>manueldisabatino.it</title>
+    <link rel="icon" type="image/x-icon" href="IMG/faviconSito.png">
     <link rel="stylesheet"  href="css/style.min.css" type="text/css">
     <link rel="stylesheet"  href="css/index.min.css" type="text/css">      
 </head>
@@ -21,36 +41,21 @@ $str_json = json_decode(UT::leggiTesto($file));
         <div class="contentspace">  <!--############ INIZIO DEL PRIMO CONTENUTO DELLLA PAGINA #################################-->
             <div class="grid"> <!-- ### INIZIO GRIGLIA ######## -->
                 <div class="title">
-                    <h2>PAGINA INIZIALE</h2> 
+                    <h2><?php echo $righe["Titolo"] ?></h2> 
                 </div>
                 <div class="paragrafo">
-                    <p> <?php  echo $str_json->index->paragrafo;?></p>
+                    <p> <?php  echo $righe["Contenuto"];?></p>
                 </div>
                 <div class="img">
-                    <img src="<?php echo $str_json->index->img;?>" alt="sfondo" width="1024" height="600">
+                    <img src="<?php echo "IMG/".$righe["ImagePath"] ?>" alt="sfondo" width="1024" height="600">
                 </div>
             </div><!-- ###  FINE GRIGLIA  ########-->
         </div><!--  ############# FINE DEL PRIMO CONTENUTO  #############################-->
     <h2 id="title2">ESEMPIO DI LAVORI SVOLTI</h2>
         <div class="secondo-contenitore"><!--  #### INIZIO CONTENUTO SECONDARIO  ###############-->
-<!--########## CREAZIONE COL CICLO FOR DI 3 CARD CONTENENTI DELLE SIMULAZIONI DI LAVORI  #################-->
-         <?php
-         $i=0;// INIZIALIZZO IL CONTATORE
-                foreach($str_json->lavoro->contenuto as $arr){
-                     
-                    $array = get_object_vars($arr);
-                    if($i== 3){//VOGLIO SOLO VISUALIZZARE I PRIMI 3 LAVORI
-                        break;
-                    }
-                    printf(
-                   '<div class="card">
-                           <a href="lavoro.php?selezionato=%u" title="%s">Lavoro di tipo... svolto per...
-                           <br>clicca per saperne di più
-                           <div class="img"><img src="IMG/webdev.jpg" alt=""></div></a>
-                       </div>', $array["id"], $array["titolo"]) ;
-                       $i++;
-                    }
-                    ?>
+        <?php
+            echo UT::crea3Card($FolderPath, $dati);
+        ?>
             </div>  <!--  #### FINE CONTENUTO SECONDARIO  ###############-->
     <?php 
         require("footer.php");  //### FOOTER DELLA PAGINA

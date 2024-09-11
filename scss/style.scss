@@ -33,13 +33,13 @@
 .card {
     /* ############   GRAFICA DELLE CARD   ###########################*/
     display: block;
-    border: 30px;
     padding: 30px;
     border: #b9a80d solid 1px;
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
     margin: 30px;
     width: 25%;
+    overflow: hidden;
 
     @media(max-width:768px){ // ##### RESPONSIVENESS DELLE CARD  ################
         overflow: hidden;
@@ -55,13 +55,15 @@
 
     img {
         padding:0px;
-        margin: 5px;
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
 
         @media(max-width:768px) {// ##### RESPONSIVENESS DELL'IMMAGINE  ################
             display: none;
         }
     }
-    a { 
+    a{ 
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-decoration: none;
         color: rgb(60, 62, 63);
@@ -72,4 +74,5 @@
     margin: 0 auto;
     padding: 0;
     line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
 }

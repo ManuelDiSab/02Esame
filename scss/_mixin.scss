@@ -44,6 +44,9 @@
          }
         .logo{
                 margin-right: auto;
+                img{
+                    width: 350px;
+                }
             }
             #button{ //### BOTTONE DEL CONTATTO ##############
                 padding: 15px 40px;
@@ -88,7 +91,8 @@
     @media all and (max-width: 768px) { //   RESPONSIVENESS CON DISPOSITIVI CON LARGHEZZA MASSIMA DELLO SCHERMO DI 768px
         .logo {
             position: absolute;
-            right: 30px;
+            right:0px;
+            transform: scale(0.8);
         }
         .navbar{
             position: fixed;
@@ -184,6 +188,7 @@
         }
     }
      footer{
+        margin-top: 100px;
         .foot a, .foot p{
             text-decoration: none;
             @if $template==light{  // TEMPLATE DI TIPO CHIARO

@@ -4,8 +4,10 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 512px;
     .container{// GRAFICA DEL CONATINER DEL FORM ###############
-        max-width: 650px;
+        min-width: 400px;
+        max-width: 750px;
         padding: 28px;
         margin: 50px 28px;
         border-radius: 10px;
@@ -37,7 +39,7 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
             .inputbox{
                 display: flex;
                 flex-wrap: wrap;
-                width: 50%;
+                width: 100%;
                 @media(max-width:768px){
                     width: 90%;
                 }
@@ -50,15 +52,19 @@ main{//DISPOSIZIONE DEL CONTENITORE DEL CONTENUTO
                 input {
                     height: 40px;
                     width: 95%;
-                    padding: 0 10px;
+                    padding:  10px;
                     border-radius: 5px;
                     border: 1px solid black;
                     outline: none;
+                    background-color: white;
                 }
             }
                 textarea{
                     width: 98%;
-                    height: 50px;
+                    height: 100px;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                    padding: 10px;
                 }
             }
 

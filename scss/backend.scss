@@ -1,0 +1,111 @@
+@import "variabili";
+
+main{
+    #aggiungi{
+        &:hover{
+            color: rgb(10, 211, 10);
+        }
+    }
+    #elimina{
+        &:hover{
+            color: red;
+        }
+    }
+    min-height: 512px;
+    .form-content{
+        margin-top: 70px;
+        display: block;
+        font-size:20px ;
+        text-align: center;
+        label{
+            margin-right: 15px;
+        }
+        select{
+            cursor: pointer;
+            width: 150px;
+            border: 1.5px solid $MenuC;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 17px;
+            option{
+                font-size: 17px;     
+                text-align: center;
+                cursor: pointer;    
+            }
+        }
+    }
+    .nascondi{
+            display: none;
+    }
+    .contenuto{
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+            button{
+                margin: 10px auto;
+                display: inline-block;
+                font-size: 17px;
+                border: none;
+                border-radius: 50px;
+                width: 170px;
+                cursor: pointer;
+                background: none;
+                a{
+                    text-decoration: none;
+                    color: gray;
+                    &:hover{
+                        color: black;
+                        transition: 0.5s;
+                        
+                    }
+                    
+                }
+            }
+        }
+        .tabella{
+            display: block;
+            border-spacing: 15px;
+            width: 80%;
+            margin: auto;
+            border: 1.8px solid $MenuC;
+            border-radius: 15px;
+            table{
+                border-collapse: collapse;
+                border: 1.8px solid $MenuC;
+                text-align: center;
+                border-radius: 15px;
+                background-color: white;
+                font-size: 14px;       
+                overflow: hidden;    
+                thead{
+                    font-size: 18px;
+                    background:whitesmoke;
+                    th{
+                        padding: 10px;
+                        width: 20%;
+                        
+                    }
+                }
+                tbody{
+                    td{
+                        border:  1.8px solid $MenuC;
+                        img{
+                            margin: 10px;
+                        }
+                    }
+                }
+                tfoot{
+                    text-align: center;
+                        button{
+                            text-align: center;
+                            margin:  0 auto;
+                            background: none;
+                            border:none;
+                            cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        
+    

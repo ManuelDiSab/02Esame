@@ -26,7 +26,18 @@
         }
         
     }
-
+     .container1, .container2{  // DISPOSIZIONE DEI DUE CONTAINER
+        display: flex;
+        margin-top: 45px;
+        margin-bottom: 90px;
+        img{
+            border-radius: 20%;
+            padding: 20px 30px;
+        }
+        #img2{
+            float: left;
+        }
+        
     h2{
         text-align: center;
         font-family: 'Times New Roman', Times, serif;
@@ -44,17 +55,6 @@
             text-align: center;
         }
     }
-     .container1, .container2{  // DISPOSIZIONE DEI DUE CONTAINER
-        display: flex;
-        margin-top: 45px;
-        margin-bottom: 90px;
-        img{
-            border-radius: 20%;
-            padding: 20px 30px;
-        }
-        #img2{
-            float: left;
-        }
      }
 
      h1{
@@ -67,6 +67,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        p{
+            font-size: 14px;
+        }
      }
 }
 
