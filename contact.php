@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="IMG/faviconSito.png">  <!--## FAVICON DEL SITO ##########-->
     <link rel="stylesheet"  href="css/style.min.css" type="text/css">
     <link rel="stylesheet"  href="css/contact.min.css" type="text/css"> 
-    <script src="utility.js"></script>
+    <script src="utility.js" type="javascript/application"></script>
     <script> // Validazione con Javascript
             const FU = new Funzioni();
             window.onload = function () {
@@ -98,7 +98,7 @@
                 <h2>Compila il form per saperne di più</h2>
                     <div class="content">
                         <div class="inputbox">
-                            <label for="Nome" id="lb_nome"<?php echo $clsErroreNome; ?>>Nome<span>*</span></label>
+                            <label for="Nome" id="lb_nome" <?php echo $clsErroreNome; ?>>Nome<span>*</span></label>
                             <input type="text" placeholder="nome" name="nome" id="Nome" required maxlength="25" value="<?php echo $nome;?>">
                         </div>
                         <div class="inputbox">
@@ -106,7 +106,7 @@
                             <input type="text" placeholder="cognome" name="cognome" id="cognome" required maxlength="25" value="<?php echo $cognome; ?>">
                         </div>
                         <div class="inputbox">
-                            <label for="email" id="lb_email"<?php echo $clsErroreEmail; ?>>Email <span>*</span></label>
+                            <label for="email" id="lb_email" <?php echo $clsErroreEmail; ?>>Email <span>*</span></label>
                             <input type="email" placeholder="E-mail" name="email" id="email" required maxlength="100" minlength="10" value=" <?php echo $email; ?>">
                         </div>
                         <div class="inputbox">

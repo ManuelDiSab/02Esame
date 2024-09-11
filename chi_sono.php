@@ -3,39 +3,24 @@ require_once("utility.php"); // file contenente alcune funzioni utili
 require_once("connessione.php"); // file per le connessioni al database
 use MieClassi\Utility as UT;
 $FolderPath = "ImgLavori/";
-try{
     $sql = "SELECT lavori.idLavoro, lavori.ImagePath, lavori.descrizione, lavori.titolo FROM lavori";
-    $query = $pdo->prepare($sql);
-    $query->execute();
-    if ($query->rowCount() > 0) {
-        $lunghezza = 0;
-        while ($righe = $query->fetch(PDO::FETCH_ASSOC)) {
+    $query = $mysqli->query($sql);
+    if ($query->num_rows > 0) {
+        while ($righe = $query->fetch_array(MYSQLI_ASSOC)) {
             $tmp = array(
                 "idLavoro" => $righe["idLavoro"],
                 "ImagePath" => $righe["ImagePath"],
                 "descrizione" => $righe["descrizione"],
                 "titolo"=> $righe["titolo"]
-            );$lunghezza++;
+            );
             $dati[] = $tmp;
         }   
     }
-}
-catch(PDOException $e) {
-    echo "errore PDO:" . $e->getMessage();
-    die();
-}
-try{
     $sql2 = "SELECT chi_sono.Titolo, chi_sono.Contenuto, chi_sono.ImagePath, chi_sono.Titolo2, chi_sono.Contenuto2, chi_sono.ImagePath2  FROM chi_sono";
-    $query2 = $pdo->prepare($sql2);
-    $query2->execute();
-    if ($query2->rowCount() > 0) {
-        $righe2 = $query2->fetch(PDO::FETCH_ASSOC);
+    $query2 = $mysqli->query($sql2);
+    if ($query2->num_rows > 0) {
+        $righe2 = $query2->fetch_array(MYSQLI_ASSOC);
         }   
-    }
-catch(PDOException $e) {
-    echo "errore PDO:" . $e->getMessage();
-    die();
-}
 ?>
 <!DOCTYPE html>
 <html lang="it">

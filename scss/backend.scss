@@ -1,16 +1,6 @@
 @import "variabili";
 
 main{
-    #aggiungi{
-        &:hover{
-            color: rgb(10, 211, 10);
-        }
-    }
-    #elimina{
-        &:hover{
-            color: red;
-        }
-    }
     min-height: 512px;
     .form-content{
         margin-top: 70px;
@@ -41,7 +31,18 @@ main{
         width: 100%;
         padding: 30px;
         text-align: center;
-            button{
+        .aggiungi{
+            &:hover{
+                color: rgb(10, 211, 10);
+            }
+        }
+        .elimina{
+            &:hover{
+                color: red;
+            }
+        }
+            a{
+                text-decoration: none;
                 margin: 10px auto;
                 display: inline-block;
                 font-size: 17px;
@@ -50,15 +51,11 @@ main{
                 width: 170px;
                 cursor: pointer;
                 background: none;
-                a{
-                    text-decoration: none;
-                    color: gray;
+                color: gray;
                     &:hover{
                         color: black;
                         transition: 0.5s;
-                        
                     }
-                    
                 }
             }
         }
@@ -96,16 +93,9 @@ main{
                 }
                 tfoot{
                     text-align: center;
-                        button{
-                            text-align: center;
-                            margin:  0 auto;
-                            background: none;
-                            border:none;
-                            cursor: pointer;
-                            }
                         }
                     }
                 }
-            }
+            
         
     

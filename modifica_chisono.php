@@ -29,13 +29,12 @@ if ($query2->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="IMG/faviconSito.png">  <!--## FAVICON DEL SITO ##########-->
     <title>Modifiche</title>
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/contact.min.css">
     <link rel="stylesheet" href="css/backend.min.css">
-    <script></script>
 </head>
-
 <body>
     <?php require_once("nav_bar.php"); ?>
 
@@ -45,36 +44,48 @@ if ($query2->num_rows > 0) {
             $classeSelezionato = ($n == $selezionato) ? 'class="selezionato"' : ""; //in base all'id che corrisponde a $selezionato creo il contenuto della pagina 
             if ($selezionato == $n) {
                 echo '<div class="container">
-            <form action="backend.php?idChiSono='.$arr["idChiSono"] .'" method="POST" novalidate>
+            <form action="backend.php?idChiSono='.$arr["idChiSono"] .'" method="POST" novalidate onSubmit="return verifyform(this)">
                 <h2>MODIFICA </h2>
                 <div class="content">
                 <div class="inputbox">
-            <label for="titolo" id="lb_titolo">Titolo</label>
-            <input type="text" name="Titolo" id="titolo"  maxlength="15" value="' . $arr["Titolo"] . '">
+            <label for="titolo" >Titolo</label>
+            <input onChange="return verify(this,'."Titolo".')" type="text" name="Titolo" id="titolo"  maxlength="25" value="' . $arr["Titolo"] . '">
             <input type="hidden" name="check" value="">
         </div>
         <div class="inputbox">
-                <label for="Contenuto" id="lb_Contenuto"> Contenuto </label>
-                <textarea type="text"  name="Contenuto" id="Contenuto"  maxlength="500" >' . $arr["Contenuto"] . '</textarea>
+                <label for="Contenuto" > Contenuto </label>
+                <textarea onChange="return verify(this,'."Contenuto".')" name="Contenuto" id="Contenuto"  maxlength="500" >' . $arr["Contenuto"] . '</textarea>
         </div>
                         <div class="inputbox">
-            <label for="titolo" id="lb_titolo">Titolo</label>
-            <input type="text" name="Titolo2" id="titolo"  maxlength="15" value="' . $arr["Titolo2"] . '">
-            <input type="hidden" name="check" value="">
+            <label for="titolo" >Titolo</label>
+            <input type="text" name="Titolo2" id="titolo2"  maxlength="25" value="' . $arr["Titolo2"] . '" onChange="return verify(this,'."Titolo2".')">
         </div>
         <div class="inputbox">
-                <label for="Contenuto" id="lb_Contenuto"> Contenuto </label>
-                <textarea type="text"  name="Contenuto2" id="Contenuto"  maxlength="500" >' . $arr["Contenuto2"] . '</textarea>
+                <label for="Contenuto" > Contenuto </label>
+                <textarea onChange="return verify(this,'."Contenuto2".')" name="Contenuto2" id="Contenuto2"  maxlength="500" >' . $arr["Contenuto2"] . '</textarea>
         </div>
         <div class="button-container">
         <button type="submit" name="modificaChiSono" id="modificaChiSono">MODIFICA</button>
-    </div>
+    </div></div>
     </form></div>';
             }
         } ?>
     </main>
-
-
+    <script>
+	function verify(f,nomecampo)
+	{
+		if (f.value=='') {//Validazione dati
+			alert('Devi immettere un valore per il campo '+nomecampo);
+			return false;
+		} else
+			return true;
+	}
+	
+	function verifyform(f)
+	{  
+	    return verify(f.Contenuto,'Contenuto') && verify(f.Titolo,'Titolo') && verify(f.Contenuto2,'Contenuto2') && verify(f.Titolo2,'Titolo2') ;
+	}
+    </script>
 
     <?php require_once("footer.php") ?>
 </body>

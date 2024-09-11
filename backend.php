@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite login
@@ -12,10 +13,6 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
     if(isset($_POST["submit"])){//controllo se è stato fatto il submit e se si eseguo il codice sottostante
         $descrizione = $_POST["descrizione"];
         $titolo = $_POST["titolo"];
-        if ($_FILES["img"]["error"] === 4) {//verifico l'inserimento dell'immagine
-            echo  `<script> alert("L'immagine non esiste")</script>`;
-        }
-        else{
         $estensioni_permesse = ["jpg", "png", "jpeg"];
         $file_name = $_FILES["img"]["name"];
         $tmp_name = $_FILES["img"]["tmp_name"];            
@@ -29,14 +26,13 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
     $sql = "INSERT INTO lavori(ImagePath,descrizione,titolo) VALUES(?,?,?)";
     $query = $mysqli->prepare($sql); 
     $query->bind_param("sss", $newImageName, $descrizione, $titolo);
-    $query->execute();
+    $risultato = $query->execute();
     echo  `<script> alert("Lavoro inserito con successo")</script>`;
-        }
     } 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +41,7 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
     <link rel="icon" type="image/x-icon" href="IMG/faviconSito.png">  <!--## FAVICON DEL SITO ##########-->
     <title>Pannello di Gestione</title>
 </head>
+<body>
 <header>
         <div class="navbar"><!-- ####### INIZIO DEL MENU DI NAVIGAZIONE ############################################-->
             <input type="checkbox" id="controllo">
@@ -61,10 +58,9 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
                 </ul>               
         </div><!--############## FINE DEL MENU DI NAVIGAZIONE ############################-->
     </header>
-<body>
+
     <main>
     <div class="form-content">
-            <form action="" class="categoria">
                 <label for="scelta">Scegli il contenuto da visualizzare</label>
                 <select onchange="showTable(this)" id="scelta"><!-- ###     SELECT PER LA SCELTA DELLE SINGOLE TABELLE CON FUNZIONE PER LA VISUALIZZAZIONE DELLA TABELLA SCELTA -->
                     <option  value="Tutti" selected>Mostra tutto</option>
@@ -74,8 +70,6 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
                     <option  value="Card_lavori">Card Lavori</option>
                     <option  value="Utenti">Utenti</option>
                 </select>
-                </option>
-            </form>
         </div>
 <?php
     //########## SQL PER LA HOMEPAGE  ################################
@@ -84,7 +78,7 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
         $Contenuto = $_POST["Contenuto"];
         if(isset($_GET["idHome"])){
         $id = $_GET["idHome"];
-        if(UT::CtrlLenght($Titolo,5,15) && UT::CtrlLenght($Contenuto,10,500)){//Valido i dati da immettere nel db
+        if(UT::CtrlLenght($Titolo,5,25) && UT::CtrlLenght($Contenuto,10,500)){//Valido i dati da immettere nel db
         $update = mysqli_query($mysqli,"UPDATE homepage SET Titolo='$Titolo',Contenuto='$Contenuto' WHERE idHome=$id");
         }
         else{
@@ -120,10 +114,10 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
         $Contenuto2 = $_POST["Contenuto2"];
         if(isset($_GET["idChiSono"])){
         $id = $_GET["idChiSono"];
-        if(UT::CtrlLenght($Titolo,5,15) && UT::CtrlLenght($Contenuto,10,500) && UT::CtrlLenght($Titolo2,5,15) && UT::CtrlLenght($Contenuto2,10,500)){
+        if(UT::CtrlLenght($Titolo,5,25) && UT::CtrlLenght($Contenuto,10,500) && UT::CtrlLenght($Titolo2,5,25) && UT::CtrlLenght($Contenuto2,10,500)){
         $update = mysqli_query($mysqli,"UPDATE chi_sono SET Titolo='$Titolo',Titolo2='$Titolo2',Contenuto2='$Contenuto2',Contenuto='$Contenuto' WHERE idChiSono=$id");
         }else{
-            header("Location:modifica_chisono.php?idHome=$id");
+            header("Location:modifica_chisono.php?idChiSono=$id");
         }
     }
     }
@@ -158,7 +152,7 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
         $descrizione = $_POST["descrizione"];
         if(isset($_GET["IdLavoro"])){
         $id = $_GET["IdLavoro"];
-        if(UT::CtrlLenght($titolo,5,15) && UT::CtrlLenght($descrizione,10,500)){//Valido i dati da immettere nel db
+        if(UT::CtrlLenght($titolo,5,25) && UT::CtrlLenght($descrizione,10,500)){//Valido i dati da immettere nel db
         $update = mysqli_query($mysqli,"UPDATE lavori SET titolo='$titolo', descrizione='$descrizione' WHERE IdLavoro=$id");
         }else{
             header("Location:modifica_progetto.php?IdLavoro=$id");
@@ -195,7 +189,7 @@ if(!isset($_SESSION['login'])){ //Controllo per entrare nel backend solo tramite
         $Servizio = $_POST["Servizio"];
         if(isset($_GET["idServizio"])){
         $id = $_GET["idServizio"];
-        if(UT::CtrlLenght($Titolo,5,15) && UT::CtrlLenght($Servizio,10,500)){
+        if(UT::CtrlLenght($Titolo,5,25) && UT::CtrlLenght($Servizio,10,500)){
         $update = mysqli_query($mysqli,"UPDATE servizi SET Titolo='$Titolo', Servizio='$Servizio' WHERE idServizio='$id'");
         }else{
             header("Location:modifica_servizi.php?idServizio=$id");
