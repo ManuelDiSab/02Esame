@@ -25,6 +25,6 @@ if(mysqli_num_rows($query) == 1){
 }
 else{
     echo "<script>alert('Password o Username errati')</script>";
-    header("Refresh:1 url=AreaPrivata.php");
+    header("Refresh:0 url=AreaPrivata.php");
 }
 ?>

@@ -34,11 +34,11 @@
                     <h2>AGGIUNGI UN LAVORO </h2>
                     <div class="content">
                         <div class="inputbox">
-                            <label for="titolo" id="lb_titolo">Titolo</label>
+                            <label for="titolo">Titolo</label>
                             <input type="text" name="titolo" id="titolo"  maxlength="15" required onChange="return verify(this,'titolo')">
                         </div>
                         <div class="inputbox">
-                            <label for="descrizione" id="lb_descrizione"> Contenuto </label>
+                            <label for="descrizione" > Descrizione </label>
                             <textarea  name="descrizione" id="descrizione"  maxlength="500" required onChange="return verify(this,'descrizione')"></textarea>
                         </div>
                         <div class="inputbox">
