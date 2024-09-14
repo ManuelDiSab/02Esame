@@ -3,10 +3,14 @@
   * definisco le variabili per la connessione al database
   */
 
-  $indirizzo = "localhost";
-  $db = "manueldisabatino.it";
-  $utente = "root";
-  $password = "";
+//   $indirizzo = "31.11.39.170";
+//   $db = "Sql1811982_1";
+//   $utente = "Sql1811982";
+//   $password = "Disabatino63!";
+$indirizzo = "localhost";
+$db = "manueldisabatino.it";
+$utente = "root";
+$password = "";
 
   /**
    * CONNESSIONE A MySQL ATTRAVERSO LE MySQLi

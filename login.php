@@ -9,7 +9,7 @@ if(isset($_POST["login"])){ // Verifico se il form viene inviato
     $user = (isset($_POST['user'])) ? trim($_POST['user']) : ''; //La variabile inviata dal form viene messa all'interno di user
     $pass = (isset($_POST['pass'])) ? trim($_POST['pass']) : ''; //La variabile inviata dal form viene messa all'interno di password
 }
-    $pass = md5($pass); // password codificata con md5 Ascii(deprecato)
+    $pass = hash("SHA512", $pass); // password codificata con SHA512
     $query = $mysqli->query("SELECT Id, user, pass FROM privato WHERE user = '$user' AND pass = '$pass'");
 
 if(mysqli_num_rows($query) == 1){
@@ -24,7 +24,8 @@ if(mysqli_num_rows($query) == 1){
     header('Location: backend.php');
 }
 else{
-    echo "<script>alert('Password o Username errati')</script>";
+    echo "<script>alert('Password o Username errati $pass')</script>";
     header("Refresh:0 url=AreaPrivata.php");
+    
 }
 ?>
