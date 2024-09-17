@@ -1,5 +1,6 @@
 <?php
     require_once("validatore.php");
+    require_once("connessione.php");
 ?>
 <!DOCTYPE html>
 <html lang="it">
